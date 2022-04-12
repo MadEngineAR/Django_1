@@ -30,7 +30,7 @@ class UserRegisterForm(UserCreationForm):
         fields = ('username', 'password1', 'password2', 'first_name', 'last_name', 'email')
 
     def __init__(self, *args, **kwargs):
-        super(UserCreationForm, self).__init__(*args, **kwargs)
+        super(UserRegisterForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['placeholder'] = 'Введите имя пользователя'
         self.fields['password1'].widget.attrs['placeholder'] = 'Введите пароль'
         self.fields['password2'].widget.attrs['placeholder'] = 'Подтвердите пароль'
@@ -59,13 +59,12 @@ class UserProfileForm(UserChangeForm):
     image = forms.ImageField(widget=forms.FileInput(), required=False, validators=[file_size])
     age = forms.IntegerField(widget=forms.NumberInput(), required=False)
 
-
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'image', 'age')
 
     def __init__(self, *args, **kwargs):
-        super(UserChangeForm, self).__init__(*args, **kwargs)
+        super(UserProfileForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['readonly'] = True
         self.fields['email'].widget.attrs['readonly'] = True
 
@@ -73,10 +72,5 @@ class UserProfileForm(UserChangeForm):
             field.widget.attrs['class'] = 'form-control py-4'
         self.fields['image'].widget.attrs['class'] = 'custom-file-input'
 
-    # def clean_first_name(self):
-    #     first_name = self.cleaned_data['first_name']
-    #     if re.search('[a-zA-Z0-9]', self.cleaned_data['first_name']):
-    #         raise ValidationError("Пожалуйста введите ваше имя на кириллице. Не используйте цифры.")
-    #     return first_name
 
 

@@ -44,6 +44,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    user_select = request.user
     if request.method == 'POST':
         form = UserProfileForm(instance=request.user, data=request.POST, files=request.FILES)
         if form.is_valid():
@@ -51,8 +52,8 @@ def profile(request):
             messages.success(request, 'Вы успешно изменили свои данные')
         else:
             print(form.errors)
-    user_select = request.user
-    form = UserProfileForm(instance=user_select)
+    else:
+        form = UserProfileForm(instance=user_select)
     content = {'title': 'Geekshop | Профиль',
                'form': form,
                'baskets': Basket.objects.filter(user=user_select)}
