@@ -1,0 +1,40 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="endif" />
+            <item index="1" class="java.lang.String" itemvalue="{%" />
+            <item index="2" class="java.lang.String" itemvalue="%}" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.digit" />
+          <option value="dict.*" />
+          <option value="typing.KeysView.__getitem__" />
+          <option value="collections.OrderedDict.*" />
+          <option value="django.db.models.fields.PositiveIntegerField.__mul__" />
+          <option value="django.db.models.fields.related.ForeignKey.price" />
+          <option value="geekshop.basket.models.Basket.objects" />
+          <option value="mainapp.models.ProductCategories.objects" />
+          <option value="mainapp.models.Product.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
